@@ -1,26 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-magenta-50: #fdf4ff;
+  --color-magenta-100: #fae8ff;
+  --color-magenta-200: #f5d0fe;
+  --color-magenta-300: #f0abfc;
+  --color-magenta-400: #e879f9;
+  --color-magenta-500: #d946ef;
+  --color-magenta-600: #c026d3;
+  --color-magenta-700: #a21caf;
+  --color-magenta-800: #86198f;
+  --color-magenta-900: #701a75;
+  --color-magenta-950: #4a044e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-white text-slate-950 antialiased selection:bg-magenta-200 selection:text-magenta-900;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass {
+    @apply border border-white/20 bg-white/70 backdrop-blur-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-slate-950 via-magenta-600 to-magenta-400 bg-clip-text text-transparent;
+  }
+
+  .magenta-glow {
+    box-shadow: 0 0 40px -10px rgba(217, 70, 239, 0.3);
+  }
 }
