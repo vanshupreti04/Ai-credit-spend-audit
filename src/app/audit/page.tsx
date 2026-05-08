@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import AuditHeader from "@/components/audit/AuditHeader";
 import AuditInputForm from "@/components/audit/AuditInputForm";
 import GenerateAuditCard from "@/components/audit/GenerateAuditCard";
@@ -11,21 +13,18 @@ import {
   createDefaultTool,
 } from "@/data/audit-options";
 
+import { generateAuditResult } from "@/lib/audit-engine";
+
 export default function AuditPage() {
+  const router = useRouter();
+
   const [teamName, setTeamName] = useState("");
   const [teamSize, setTeamSize] = useState("10");
-  const [workflow, setWorkflow] =
-    useState<WorkflowType>("Engineering");
-
+  const [workflow, setWorkflow] = useState<WorkflowType>("Engineering");
   const [monthlyBudget, setMonthlyBudget] = useState(500);
-
   const [growth, setGrowth] = useState("Stable");
-
   const [concern, setConcern] = useState("");
-
-  const [tools, setTools] =
-    useState<AITool[]>([createDefaultTool()]);
-
+  const [tools, setTools] = useState<AITool[]>([createDefaultTool()]);
   const [isGenerating, setIsGenerating] = useState(false);
 
   useEffect(() => {
@@ -43,7 +42,9 @@ export default function AuditPage() {
       setGrowth(data.growth ?? "Stable");
       setConcern(data.concern ?? "");
       setTools(data.tools?.length ? data.tools : [createDefaultTool()]);
-    } catch {}
+    } catch {
+      localStorage.removeItem("credex-audit-form");
+    }
   }, []);
 
   useEffect(() => {
@@ -59,26 +60,11 @@ export default function AuditPage() {
         tools,
       }),
     );
-  }, [
-    teamName,
-    teamSize,
-    workflow,
-    monthlyBudget,
-    growth,
-    concern,
-    tools,
-  ]);
+  }, [teamName, teamSize, workflow, monthlyBudget, growth, concern, tools]);
 
   const totals = useMemo(() => {
-    const monthly = tools.reduce(
-      (sum, tool) => sum + tool.monthlySpend,
-      0,
-    );
-
-    const seats = tools.reduce(
-      (sum, tool) => sum + tool.seats,
-      0,
-    );
+    const monthly = tools.reduce((sum, tool) => sum + tool.monthlySpend, 0);
+    const seats = tools.reduce((sum, tool) => sum + tool.seats, 0);
 
     return {
       monthly,
@@ -87,10 +73,7 @@ export default function AuditPage() {
     };
   }, [tools]);
 
-  const updateTool = (
-    id: string,
-    updates: Partial<AITool>,
-  ) => {
+  const updateTool = (id: string, updates: Partial<AITool>) => {
     setTools((prev) =>
       prev.map((tool) =>
         tool.id === id ? { ...tool, ...updates } : tool,
@@ -103,17 +86,31 @@ export default function AuditPage() {
   };
 
   const removeTool = (id: string) => {
-    setTools((prev) =>
-      prev.filter((tool) => tool.id !== id),
-    );
+    setTools((prev) => prev.filter((tool) => tool.id !== id));
   };
 
   const handleGenerate = () => {
     setIsGenerating(true);
 
+    const auditInput = {
+      teamName,
+      teamSize: Number(teamSize) || 1,
+      workflow,
+      monthlyBudget,
+      growth,
+      concern,
+      tools,
+    };
+
+    const auditResult = generateAuditResult(auditInput);
+
+    localStorage.setItem("credex-audit-input", JSON.stringify(auditInput));
+    localStorage.setItem("credex-audit-result", JSON.stringify(auditResult));
+
     setTimeout(() => {
       setIsGenerating(false);
-    }, 1400);
+      router.push("/results");
+    }, 1000);
   };
 
   return (
