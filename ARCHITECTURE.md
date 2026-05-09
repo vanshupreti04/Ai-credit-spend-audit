@@ -1,4 +1,4 @@
-# 🏗️ ARCHITECTURE.md
+# 🏗️ ARCHITECTURE
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-Fullstack-black?style=for-the-badge&logo=nextdotjs" />
