@@ -1,4 +1,4 @@
-# 💰 ECONOMICS.md
+# 💰 ECONOMICS
 
 <p align="center">
   <img src="https://img.shields.io/badge/B2B-SaaS_Economics-blue?style=for-the-badge" />
