@@ -1,4 +1,4 @@
-# 🧪 TESTS.md
+# 🧪 TESTS
 
 <p align="center">
   <img src="https://img.shields.io/badge/Vitest-Testing-green?style=for-the-badge" />
