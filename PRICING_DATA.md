@@ -1,4 +1,4 @@
-# 💰 PRICING_DATA.md
+# 💰 PRICING_DATA
 
 <p align="center">
   <img src="https://img.shields.io/badge/Pricing-Verified-success?style=for-the-badge" />
