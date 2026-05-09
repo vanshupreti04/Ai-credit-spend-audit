@@ -1,4 +1,4 @@
-# 🤖 PROMPTS.md
+# 🤖 PROMPTS
 
 <p align="center">
   <img src="https://img.shields.io/badge/Gemini-AI-orange?style=for-the-badge" />
