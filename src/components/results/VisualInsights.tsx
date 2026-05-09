@@ -241,7 +241,7 @@ export default function VisualInsights({
                 <LabelList
                     dataKey="spend"
                     position="top"
-                    formatter={(value: number) => `$${value}`}
+                    formatter={(value) => `$${String(value)}`}
                     style={{
                     fill: "#0f172a",
                     fontSize: 22,
