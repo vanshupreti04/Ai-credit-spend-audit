@@ -1,4 +1,4 @@
-# 🚀 GTM.md — Go-To-Market Plan
+# 🚀 GTM — Go-To-Market Plan
 
 <p align="center">
   <img src="https://img.shields.io/badge/GTM-Founder_Led-purple?style=for-the-badge" />
