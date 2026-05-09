@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+import type { AuditResult } from "@/lib/audit-engine";
+
 import AIReportSection, {
   AIReport,
 } from "@/components/results/AIReportSection";
@@ -15,36 +17,6 @@ import ResultsHeader from "@/components/results/ResultsHeader";
 import ScoreOverview from "@/components/results/ScoreOverview";
 import SpendRiskSummary from "@/components/results/SpendRiskSummary";
 import VisualInsights from "@/components/results/VisualInsights";
-
-type AuditResult = {
-  overallScore: number;
-  wasteScore: number;
-  maturityLevel: string;
-  monthlySpend: number;
-  yearlySpend: number;
-  estimatedMonthlySavings: number;
-  estimatedYearlySavings: number;
-  spendPerEmployee: number;
-  benchmarkLabel: string;
-  duplicateToolRisk: string;
-  seatWasteRisk: string;
-  apiVolatilityRisk: string;
-  credexFit: boolean;
-  findings: {
-    title: string;
-    description: string;
-    severity: string;
-    category: string;
-  }[];
-  recommendations: {
-    title: string;
-    description: string;
-    action: string;
-    estimatedMonthlySavings: number;
-    priority: string;
-  }[];
-  summaryInputForLLM: string;
-};
 
 type AuditInput = {
   teamName: string;
@@ -80,11 +52,14 @@ export default function ResultsPage() {
     if (!savedResult) return;
 
     const parsedResult = JSON.parse(savedResult) as AuditResult;
-    setResult(parsedResult);
 
-    if (savedInput) {
-      setAuditInput(JSON.parse(savedInput) as AuditInput);
-    }
+    queueMicrotask(() => {
+      setResult(parsedResult);
+
+      if (savedInput) {
+        setAuditInput(JSON.parse(savedInput) as AuditInput);
+      }
+    });
 
     async function generateReport() {
       try {

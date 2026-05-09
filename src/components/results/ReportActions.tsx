@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Download, Mail, MessageCircle, RotateCcw } from "lucide-react";
+import type { AuditResult } from "@/lib/audit-engine";
+import type { AIReport } from "@/components/results/AIReportSection";
 import { generateAuditPdf } from "@/lib/pdf-report";
 import LeadCaptureModal from "./LeadCaptureModal";
 
@@ -15,12 +17,32 @@ type LeadData = {
   teamSize: string;
 };
 
+type AuditInput = {
+  teamName: string;
+  teamSize: number;
+  workflow: string;
+  monthlyBudget: number;
+  growth: string;
+  concern: string;
+  tools: {
+    id: string;
+    name: string;
+    plan: string;
+    monthlySpend: number;
+    seats: number;
+    frequency: string;
+    billingCycle: string;
+    ownerTeam: string;
+    importance: string;
+  }[];
+};
+
 type Props = {
   credexFit: boolean;
   annualSavings: number;
-  result: any;
-  aiReport: any;
-  auditInput: any;
+  result: AuditResult;
+  aiReport: AIReport | null;
+  auditInput: AuditInput | null;
 };
 
 export default function ReportActions({

@@ -35,13 +35,15 @@ export default function AuditPage() {
     try {
       const data = JSON.parse(saved);
 
-      setTeamName(data.teamName ?? "");
-      setTeamSize(data.teamSize ?? "10");
-      setWorkflow(data.workflow ?? "Engineering");
-      setMonthlyBudget(data.monthlyBudget ?? 500);
-      setGrowth(data.growth ?? "Stable");
-      setConcern(data.concern ?? "");
-      setTools(data.tools?.length ? data.tools : [createDefaultTool()]);
+      queueMicrotask(() => {
+        setTeamName(data.teamName ?? "");
+        setTeamSize(data.teamSize ?? "10");
+        setWorkflow(data.workflow ?? "Engineering");
+        setMonthlyBudget(data.monthlyBudget ?? 500);
+        setGrowth(data.growth ?? "Stable");
+        setConcern(data.concern ?? "");
+        setTools(data.tools?.length ? data.tools : [createDefaultTool()]);
+      });
     } catch {
       localStorage.removeItem("credex-audit-form");
     }

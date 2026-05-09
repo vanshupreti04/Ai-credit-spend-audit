@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
@@ -71,15 +72,18 @@ export default function Testimonials() {
                 </div>
 
                 <p className="font-medium leading-relaxed text-slate-700">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
               </div>
 
               <div className="mt-8 flex items-center gap-4 border-t border-slate-50 pt-6">
                 <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-magenta-100">
-                  <img
+                  <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="h-12 w-12"
                   />
                 </div>
 

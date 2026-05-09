@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -209,11 +210,14 @@ export default function Hero() {
                     key={item}
                     className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-2 border-white bg-slate-200"
                   >
-                    <img
+                    <Image
                       src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${
                         item + 10
                       }`}
                       alt="avatar"
+                      width={32}
+                      height={32}
+                      className="h-8 w-8"
                     />
                   </div>
                 ))}

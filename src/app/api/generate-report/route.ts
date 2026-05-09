@@ -5,14 +5,24 @@ import type { AuditResult } from "@/lib/audit-engine";
 const GEMINI_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
+type GeminiResponse = {
+  candidates?: {
+    content?: {
+      parts?: {
+        text?: string;
+      }[];
+    };
+  }[];
+};
+
 export async function POST(request: Request) {
   console.log("Generate report API called");
 
   try {
-    let body;
+    let body: { result?: AuditResult };
 
     try {
-      body = await request.json();
+      body = (await request.json()) as { result?: AuditResult };
       console.log("Request body received:", body);
     } catch (err) {
       console.error("Invalid JSON body:", err);
@@ -26,7 +36,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = body?.result as AuditResult;
+    const result = body.result;
 
     if (!result) {
       console.error("Missing result in request body:", body);
@@ -48,7 +58,7 @@ export async function POST(request: Request) {
       );
     }
 
-    let prompt;
+    let prompt: string;
 
     try {
       prompt = buildGeminiAuditPrompt(result);
@@ -108,10 +118,10 @@ export async function POST(request: Request) {
       );
     }
 
-    let data;
+    let data: GeminiResponse;
 
     try {
-      data = JSON.parse(rawText);
+      data = JSON.parse(rawText) as GeminiResponse;
       console.log("Gemini JSON parsed successfully:", data);
     } catch (err) {
       console.error("Failed to parse Gemini response JSON:", err);
@@ -125,7 +135,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     console.log("Gemini generated text:", text);
 
@@ -139,12 +149,12 @@ export async function POST(request: Request) {
       );
     }
 
-    let report;
+    let report: unknown;
 
     try {
       report = JSON.parse(text);
       console.log("Final report JSON parsed:", report);
-    } catch (err) {
+    } catch {
       console.error("Gemini returned invalid report JSON:", text);
 
       return NextResponse.json(

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Target, Users, Zap } from "lucide-react";
 
@@ -166,11 +167,14 @@ export default function Benchmarks() {
                     key={item}
                     className="h-12 w-12 overflow-hidden rounded-full border-4 border-slate-950 bg-slate-800"
                   >
-                    <img
+                    <Image
                       src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${
                         item + 40
                       }`}
                       alt="User avatar"
+                      width={48}
+                      height={48}
+                      className="h-12 w-12"
                     />
                   </div>
                 ))}
