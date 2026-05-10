@@ -205,25 +205,6 @@ The audit engine treats API spend as a higher-volatility category compared to fi
 
 ---
 
-## 💰 User Spend Is The Source of Truth
-
-The audit engine primarily relies on the user’s reported spend data.
-
-Official pricing references are used for:
-
-- 📋 Plan-fit validation
-- 📊 Benchmark comparisons
-- 💡 Savings recommendations
-- 🔍 Overspend detection
-
-Real-world spend can differ from vendor list pricing because of:
-- Discounts
-- Annual contracts
-- Startup credits
-- Enterprise negotiations
-
----
-
 ## 🔍 Manual Verification
 
 All pricing references were manually reviewed during the submission week using official vendor pricing pages.
@@ -236,9 +217,3 @@ This helps ensure:
 ✅ More accurate optimization analysis  
 
 ---
-
-## 🛡️ Pricing Disclaimer
-
-AI vendor pricing changes frequently.
-
-The pricing data in this repository represents a snapshot verified during the assignment submission period and may become outdated over time.

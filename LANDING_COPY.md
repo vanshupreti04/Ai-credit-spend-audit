@@ -1,4 +1,4 @@
-# 🎯 LANDING_COPY.md
+# 🎯 LANDING_COPY
 
 <p align="center">
   <img src="https://img.shields.io/badge/Landing_Page-Copywriting-purple?style=for-the-badge" />

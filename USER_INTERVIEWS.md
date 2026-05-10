@@ -1,4 +1,4 @@
-# 🗣️ USER_INTERVIEWS.md
+# 🗣️ USER_INTERVIEWS
 
 <p align="center">
   <img src="https://img.shields.io/badge/User-Research-blue?style=for-the-badge" />
@@ -7,121 +7,149 @@
 </p>
 
 <p align="center">
-  Exploratory conversations conducted with potential target users during early product validation.
+  Exploratory conversations conducted with friends building AI-based products and side projects.  
+  The discussions were informal but helped gather practical insights around AI tooling usage, subscription overlap, API costs, and development workflows during active product-building phases.
 </p>
 
 ---
 
-# 👤 Interview 1 — AK
+# 👤 Interview 1
 
 | Field | Details |
 |---|---|
 | 💼 Role | Student Developer |
 | 🚀 Project | AI Heart Disease Prediction Model |
 | 📅 Period | Prototype research phase |
-| ⏱️ Length | ~15 minutes |
+| ⏱️ Length | ~10 minutes |
 
 ---
 
 ## 🧠 Context
 
-The conversation focused on API costs and AI tooling usage while building a healthcare prediction project using machine learning models and AI-assisted coding tools.
+The conversation focused on AI tooling usage while building a heart disease prediction model using machine learning and healthcare datasets.
 
-The project relied heavily on:
-- ChatGPT
-- Gemini
-- GitHub Copilot
-- OpenAI API experimentation
+The user mainly used AI tools for:
+- data preprocessing,
+- debugging ML models,
+- Python coding,
+- research understanding,
+- and workflow automation.
 
-during development and testing.
+The workflow initially started with ChatGPT, but later shifted more toward Claude because the coding responses felt more reliable during development.
+
+Perplexity was mainly used for:
+- quick research,
+- documentation lookup,
+- and understanding ML concepts.
 
 ---
 
 ## 💬 Key Quotes
 
-> “I keep switching between AI tools because each one is better at different tasks.”
+> “I started with ChatGPT first, but later started using Claude more because the coding responses felt more reliable.”
 
-> “I didn’t realize how much small subscriptions add up together.”
+> “The free tiers usually were not enough during active development, so eventually multiple paid subscriptions started stacking up.”
 
-> “The duplicate tooling warning actually felt accurate.”
+> “Individually the subscriptions felt small, but together it became expensive for a college project.”
+
+> “Later we realized a lot of research tasks done on Perplexity could also be handled by ChatGPT or Claude.”
 
 ---
 
 ## 😮 Most Interesting Insight
 
-The user cared more about:
-- overlapping subscriptions,
-- unused plans,
-- and visibility into spending
+The biggest issue was:
+- overlapping AI subscriptions,
+- paying for tools solving similar tasks,
+- and constantly switching platforms during development.
 
-than finding the absolute cheapest tool.
+The user eventually preferred:
+- one stronger subscription,
+- instead of multiple overlapping tools.
 
 ---
 
 ## 🔄 What It Influenced
 
 This reinforced:
-- clearer duplicate-tool detection,
-- transparent savings explanations,
-- and keeping the recommendations realistic instead of aggressive.
+- duplicate-tool detection,
+- overlap-based recommendations,
+- and optimization suggestions focused on reducing unnecessary parallel subscriptions.
 
 ---
 
-# 👤 Interview 2 — RM
+# 👤 Interview 2
 
 | Field | Details |
 |---|---|
 | 💼 Role | Student Founder |
 | 🚀 Project | AI Travel Agent SaaS Application |
 | 📅 Period | Prototype research phase |
-| ⏱️ Length | ~12 minutes |
+| ⏱️ Length | ~10 minutes |
 
 ---
 
 ## 🧠 Context
 
-The discussion focused on growing AI costs while building a travel-planning SaaS product using multiple AI APIs and coding assistants.
+The discussion focused on API costs and model reliability while building an AI travel agent application.
 
-The workflow included:
-- Claude
-- ChatGPT
-- Cursor
-- Gemini API
+The project used:
+- Claude Code,
+- OpenAI APIs,
+- ChatGPT,
+- and image-generation models
 
-for development, itinerary generation, and prompt testing.
+for:
+- itinerary generation,
+- hotel recommendations,
+- coding support,
+- prompt testing,
+- and travel image generation.
+
+The biggest challenge was balancing:
+- API costs,
+- model quality,
+- and response reliability
+
+while building application features.
 
 ---
 
 ## 💬 Key Quotes
 
-> “Every new feature ends up needing another AI tool or API.”
+> “Sometimes the API cost increased quickly because every feature depended on LLM output.”
 
-> “The report felt easier to understand than manually tracking subscriptions.”
+> “Image generation, itinerary generation, and hotel details together started increasing token usage.”
 
-> “I would probably use something like this before renewing plans.”
+> “Without production traffic the cost was manageable, but at real scale the API bill could become expensive.”
+
+> “We also noticed some models gave poor outputs even after increasing API usage.”
 
 ---
 
 ## 😮 Most Interesting Insight
 
-The founder viewed the audit more as:
-- an operational visibility tool,
-- and budgeting helper
+The user was more focused on:
+- future production-scale API usage,
+- subscription sustainability,
+- and whether application revenue could realistically cover AI infrastructure costs.
 
-than just a savings calculator.
+The user also realized:
+- specific tools should only be used where they provide clear value,
+- instead of using multiple APIs for every workflow.
 
 ---
 
 ## 🔄 What It Influenced
 
-This feedback influenced:
-- stronger executive summaries,
-- clearer cost breakdowns,
-- and more founder-focused messaging.
+This influenced:
+- API-risk recommendations,
+- usage-based optimization logic,
+- and suggestions around reducing unnecessary model/API usage.
 
 ---
 
-# 👤 Interview 3 — SP
+# 👤 Interview 3
 
 | Field | Details |
 |---|---|
@@ -134,69 +162,78 @@ This feedback influenced:
 
 ## 🧠 Context
 
-The conversation focused on AI tooling costs while building a hiring platform that uses AI for resume analysis and candidate matching workflows.
+The conversation focused on AI tooling usage while building a recruitment platform that helps shortlist and analyze candidates using AI-generated evaluations.
 
 The project used:
-- ChatGPT
-- Perplexity
-- Claude
-- OpenAI API
+- ChatGPT,
+- Claude,
+- Perplexity,
+- and OpenAI APIs
 
-for testing and workflow automation.
+for:
+- resume analysis,
+- candidate report generation,
+- coding assistance,
+- prompt testing,
+- and workflow automation.
+
+Different AI tools were being used for different tasks during the development phase.
 
 ---
 
 ## 💬 Key Quotes
 
-> “I signed up for multiple tools just to compare outputs.”
+> “We kept trying multiple tools to compare outputs for candidate evaluations.”
 
-> “The biggest issue is forgetting which subscriptions are still active.”
+> “A lot of subscriptions started overlapping during the building phase.”
 
-> “The audit being fast and not requiring login was important.”
+> “The biggest issue was paying for multiple tools solving similar tasks.”
+
+> “The audit being simple and focused on overlap actually felt realistic.”
 
 ---
 
 ## 😮 Most Interesting Insight
 
-The user preferred:
-- speed,
-- simplicity,
-- and actionable recommendations
+The user realized:
+- many workflows could be handled by fewer tools,
+- and multiple subscriptions were being used mainly because of experimentation during development.
 
-over advanced analytics dashboards.
+The focus eventually shifted toward:
+- reducing overlapping AI usage,
+- and selecting one or two reliable tools for long-term use.
 
 ---
 
 ## 🔄 What It Influenced
 
 This reinforced:
-- lightweight onboarding,
-- delaying email capture until after value delivery,
-- and keeping the audit flow short and simple.
+- duplicate-tool optimization,
+- overlap-focused recommendations,
+- and keeping the audit practical instead of overly aggressive.
 
 ---
 
-# 📌 Common Patterns Across Interviews
+# 📌 Overall Conclusion
 
-The strongest recurring themes were:
+Across all three conversations, one common pattern appeared repeatedly:
 
-- 💸 AI tooling costs grow unexpectedly
-- 🔁 Users frequently duplicate subscriptions
-- 🪑 Unused seats and inactive plans are common
-- ⚡ Fast audits are preferred over spreadsheets
-- 🤝 Trustworthy recommendations matter heavily
-- 📊 Simplicity is more valuable than complexity
+Different AI subscriptions were being used for:
+- similar workflows,
+- overlapping research tasks,
+- coding help,
+- debugging,
+- and experimentation.
 
----
+Most users initially adopted:
+- multiple free tiers,
+- then gradually moved into several paid subscriptions during active development.
 
-# 🏁 Final Notes
+The strongest insight was that:
+- many teams were not intentionally overspending,
+- but AI tooling overlap naturally increased during experimentation and building phases.
 
-These conversations validated that AI spend visibility is becoming a real problem even for:
-- student founders,
-- indie builders,
-- and early-stage AI projects.
-
-The strongest signal was frustration around:
-- fragmented tooling,
-- overlapping subscriptions,
-- and lack of spending visibility.
+This validated the importance of:
+- duplicate-tool detection,
+- usage visibility,
+- and practical optimization recommendations inside the audit system.
